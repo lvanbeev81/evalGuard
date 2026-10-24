@@ -1,0 +1,25 @@
+[project]
+name = "evalguard"
+version = "0.1.0"
+description = "Deterministic evaluation and guardrail harness for AI agents and LLM outputs"
+readme = "README.md"
+requires-python = ">=3.9"
+dependencies = [
+    "pydantic>=2.5.0",
+    "jsonschema>=4.20.0",
+    "typer>=0.9.0",
+    "rich>=13.0.0",
+    "pytest>=7.4.0",
+    "pytest-asyncio>=0.21.0",
+]
+
+[project.scripts]
+evalguard = "evalguard.cli:app"
+
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[tool.pytest.ini_options]
+asyncio_mode = "auto"
+testpaths = ["tests"]
